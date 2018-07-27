@@ -29,7 +29,8 @@ const defaults = {
     onError() {},         // cssVars
     onComplete() {}       // cssVars
 };
-const hasNativeSupport = window && window.CSS && window.CSS.supports && window.CSS.supports('(--a: 0)');
+const isBrowser = typeof window !== 'undefined';
+var hasNativeSupport = isBrowser && window && window.CSS && window.CSS.supports && window.CSS.supports("(--a: 0)");
 const regex = {
     // CSS comments
     cssComments: /\/\*[\s\S]+?\*\//g,
